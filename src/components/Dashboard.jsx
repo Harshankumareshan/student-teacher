@@ -2,10 +2,13 @@ import React from 'react'
 import Card from './Card'
 import { useState } from 'react'
 import Table from 'react-bootstrap/Table';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
+
+
 function Dashboard({ users, setUsers }) {
+   
     let [data, setData] = useState([{
         title: "Earnings (Monthly)",
         value: "$5000",
@@ -36,21 +39,18 @@ function Dashboard({ users, setUsers }) {
     }
     ])
     let navigate = useNavigate()
-    // let handleDelete = (i) => {
-    //      let newArray = [...users]
-    //      newArray.splice(i,1)
-    //     setUsers(newArray)
-    // }
+    
     return <>
+   
         <div id="content-wrapper" className="d-flex flex-column">
             <div id="content">
                 <div className="container-fluid">
+                    
+               
 
-                    <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="javascript(void)" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            className="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
+                     <div className="stud-details">
+                    <h1>Student Details</h1>
+                    </div> 
 
                     <div className="row">
                         {
@@ -65,11 +65,12 @@ function Dashboard({ users, setUsers }) {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>no</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Mobile</th>
+                                    <th>Batch</th>
                                     <th>DOB</th>
+                                    <th>Teacher</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -80,8 +81,9 @@ function Dashboard({ users, setUsers }) {
                                             <td>{i + 1}</td>
                                             <td>{e.name}</td>
                                             <td>{e.email}</td>
-                                            <td>{e.mobile}</td>
+                                            <td>{e.batch}</td>
                                             <td>{e.dob}</td>
+                                            <td>{e.teacher}</td>
                                             <td>
                                                 <Button variant='primary'onClick={()=>navigate(`/edit-user/${i}`)}>Edit</Button>
                                                 &nbsp; &nbsp;

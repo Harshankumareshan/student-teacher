@@ -4,17 +4,19 @@ import { Outlet,Link } from 'react-router-dom'
 
 function Profile() {
   return <>
-  <div>
-    <h1>Profile</h1>
-    <h3>the sub Component are:</h3>
-   
-    
+  <div className='profile-wrapper'>
+    <h1>Assingment</h1>
+    <br/>
+    <br/>
     <ul>
-      <Link to='details'><button className='btn btn-primary'>Profile Details</button></Link>
-    
+    <h3>Click here to view monthly task</h3>
+    <br/>
+      <Link to='details'><button className='btn btn-primary'>Task Details</button></Link>
     <br/>
     <br/>
-    <Link to='reset-password'><button className='btn btn-primary'>Reset Password</button></Link>
+    <h3>Click here to view weekly task</h3>
+    <br/>
+    <Link to='reset-password'><button className='btn btn-primary'>Task Details</button></Link>
    
     </ul>
     <Outlet/>
